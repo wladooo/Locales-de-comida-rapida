@@ -1,0 +1,171 @@
+
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Locales Cercanos en Providencia</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Locales de Comida Rápida en Providencia</h1>
+    <p>Horarios, horas peak y muertas cerca de tu universidad 🍔</p>
+  </header>
+
+  <main id="contenedor-locales"></main>
+
+  <script>
+    const localesCercanosProvidencia = [
+      {
+        nombre: "KFC",
+        direccion: "Guardia Vieja 71, 7510147 Providencia, Región Metropolitana",
+        apertura: "11:00",
+        cierre: "21:00",
+        peak: "13:00 - 15:00",
+        muerta: "17:00 - 18:30",
+      
+        link: "https://www.google.cl/maps/place/KFC/@-33.4248248,-70.6140756,17z/data=!4m6!3m5!1s0x9662cf144cba8309:0xb59afc976a1ea987!8m2!3d-33.4233958!4d-70.6107757!16s%2Fg%2F11kp_391dd?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%3D"
+      },
+      {
+        nombre: "McDonald's",
+        direccion: "Diego de Velásquez 2085, 7510687 Providencia, Región Metropolitana",
+        apertura: "07:00",
+        cierre: "00:00",
+        peak: "12:30 - 15:00",
+        muerta: "16:00 - 18:00",
+        
+        link: "https://www.google.cl/maps/place/McDonald's/@-33.4236154,-70.6116315,19.25z/data=!4m6!3m5!1s0x9662cf68a6ed1ef1:0x3349d3c2c385c539!8m2!3d-33.423822!4d-70.6107445!16s%2Fg%2F1tdk6ct2?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%3D"
+      },
+      {
+        nombre: "Burger King",
+        direccion: "Av. Nueva Providencia 2089, 7510687 Providencia, Región Metropolitana",
+        apertura: "10:30",
+        cierre: "21:30",
+        peak: "13:00 - 15:30",
+        muerta: "16:00 - 17:30",
+        
+        link: "https://www.google.cl/maps/place/Burger+King+Guardia+Vieja/@-33.4236154,-70.6116315,19.25z/data=!4m6!3m5!1s0x9662cf7ae7413e8f:0xe717438182797470!8m2!3d-33.423732!4d-70.610763!16s%2Fg%2F11wg8m7lkk?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%3D"
+      },
+      {
+        nombre: "Carl's Jr.",
+        direccion: "Av. Nueva Providencia 2124, 7510118 Providencia, Región Metropolitana",
+        apertura: "11:00",
+        cierre: "22:00",
+        peak: "13:00 - 15:00",
+        muerta: "15:30 - 17:00",
+        
+        link: "https://www.google.cl/maps/place/Carl's+Jr./@-33.4236451,-70.6120327,18.75z/data=!4m6!3m5!1s0x9662cf65fd5ed847:0xb149b1827b08267b!8m2!3d-33.4230737!4d-70.6104031!16s%2Fg%2F11cspyjk7c?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%3D"
+      },
+      {
+        nombre: "Wendy's",
+        direccion: "Av. Pedro de Valdivia 099, 7500022 Providencia, Región Metropolitana",
+        apertura: "10:00",
+        cierre: "22:00",
+        peak: "12:30 - 14:30",
+        muerta: "15:00 - 16:30",
+        
+        link: "https://www.google.cl/maps/place/Wendy's+Pedro+de+Valdivia/@-33.4248955,-70.6148306,18z/data=!4m6!3m5!1s0x9662cf0040df3229:0xb1641fa2a181ef3c!8m2!3d-33.424599!4d-70.6122151!16s%2Fg%2F11lz1l2rtg?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%3D"
+      },
+      {
+        nombre: "Haunted House",
+        direccion: "Marchant Pereira 433, 7500557 Providencia, Región Metropolitana",
+        apertura: "13:00",
+        cierre: "21:00",
+        peak: "14:00 - 16:00",
+        muerta: "16:30 - 18:00",
+        
+        link: "https://www.google.cl/maps/place/Haunted+House/@-33.428039,-70.6149246,18z/data=!4m6!3m5!1s0x9662cf4142fac067:0xdd7712d51badf9f2!8m2!3d-33.4287688!4d-70.612581!16s%2Fg%2F11yb3dbz28?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%3D"
+      },
+      {
+        nombre: "Abre Bocas",
+        direccion: "Marchant Pereira 547, 7500942 Providencia, Región Metropolitana",
+        apertura: "12:00",
+        cierre: "17:00",
+        peak: "13:00 - 14:30",
+        muerta: "15:00 - 16:30",
+        
+        link: "https://www.google.cl/maps/place/AbreBocas/@-33.4297277,-70.6147578,18z/data=!4m6!3m5!1s0x9662cf4a804a89cf:0xdb1f961dac163e0f!8m2!3d-33.429725!4d-70.6124214!16s%2Fg%2F11f7f_l4cy?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%3D"
+      },
+      {
+        nombre: "Chef Metalero",
+        direccion: "Marchant Pereira 337, 7500557 Providencia, Región Metropolitana",
+        apertura: "12:00",
+        cierre: "23:30",
+        peak: "13:00 - 15:00",
+        muerta: "16:00 - 17:30",
+        
+        link: "https://www.google.cl/maps/place/Chef+Metalero/@-33.4287203,-70.614731,18z/data=!4m6!3m5!1s0x9662c56709bcd0b9:0x869a6d60f13a8457!8m2!3d-33.4279857!4d-70.6129229!16s%2Fg%2F11lt0fs85b?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%3D"
+      },
+      {
+        nombre: "Starbucks Coffee",
+        direccion: "Alfredo Barros Errázuriz 1953, Providencia, Región Metropolitana",
+        apertura: "08:00",
+        cierre: "22:00",
+        peak: "12:30 - 14:00",
+        muerta: "16:00 - 17:30",
+        
+        link: "https://www.google.cl/maps/place/Starbucks+Coffee/@-33.4278831,-70.6141034,18z/data=!3m1!5s0x9662cf651ebd57a3:0x85fd34ef3948a927!4m6!3m5!1s0x9662cf4e95148f35:0x3f09bf0d36faf482!8m2!3d-33.4272559!4d-70.6126057!16s%2Fg%2F11c5bjq22z?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%3D"
+      },
+      {
+        nombre: "Subway",
+        direccion: "Marchant Pereira 232, 7500523 Providencia, Región Metropolitana",
+        apertura: "10:00",
+        cierre: "21:00",
+        peak: "12:30 - 14:00",
+        muerta: "16:00 - 17:30",
+        
+        link: "https://www.google.cl/maps/place/Subway+Marchant+Pereira/@-33.4278831,-70.6141034,18z/data=!4m6!3m5!1s0x9662cf64e29b97fd:0x506465a2b2d8a55c!8m2!3d-33.4267921!4d-70.6127565!16s%2Fg%2F11csrq3qhs?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%3D"
+      },
+      {
+        nombre: "Fuente Alemana",
+        direccion: "Av. Pedro de Valdivia 210, 7510248 Providencia, Región Metropolitana",
+        apertura: "09:00",
+        cierre: "22:00",
+        peak: "12:30 - 14:30",
+        muerta: "16:00 - 17:30",
+        
+        link: "https://www.google.com/maps/place/Fuente+Alemana/@-33.4253165,-70.6114577,81m/data=!3m1!1e3!4m15!1m8!3m7!1s0x9662cf65a29b3549:0x1e3a192a56d03ccc!2sAv.+Pedro+de+Valdivia+210,+Providencia,+Regi%C3%B3n+Metropolitana!3b1!8m2!3d-33.4254905!4d-70.6111531!16s%2Fg%2F11gr7yhxch!3m5!1s0x9662cf6754b4c2b9:0x97c093890ecf3520!8m2!3d-33.4253797!4d-70.6114439!16s%2Fg%2F1tfkb6ny?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%3D"
+      },
+      {
+        nombre: "La Capital",
+        direccion: "Fidel Oteiza 1964, 7500502 Providencia, Región Metropolitana",
+        apertura: "12:00",
+        cierre: "20:00",
+        peak: "13:00 - 15:00",
+        muerta: "15:30 - 16:30",
+        
+        link: "https://www.google.cl/maps/place/La+Capital/@-33.4264863,-70.6140122,18z/data=!4m6!3m5!1s0x9662cf65af076c6f:0xe507bd3f0b8fad41!8m2!3d-33.4255979!4d-70.6123808!16s%2Fg%2F11c0ph86h8?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%3D"
+      },
+      {
+        nombre: "Garage 0256(hamburgueseria)",
+        direccion: "Nueva Providencia 1945 Salida C metro Pedro de Valdivia, al costado de pizza Nápoli, 7570356 Providencia, Región Metropolitana",
+        apertura: "11:00",
+        cierre: "23:00",
+        peak: "12:30 - 14:00",
+        muerta: "16:00 - 17:30",
+        
+        link: "https://www.google.cl/maps/place/Garage+0276/@-33.4264863,-70.6140122,18z/data=!4m6!3m5!1s0x9662ceec85712231:0xac84ed9f01fd5a1d!8m2!3d-33.4255695!4d-70.6128167!16s%2Fg%2F11bycl5nsy?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%3D"
+      }
+    ];
+
+    const contenedor = document.getElementById('contenedor-locales');
+
+    localesCercanosProvidencia.forEach(local => {
+      const card = document.createElement('div');
+      card.className = 'card';
+
+      card.innerHTML = `
+        
+        <h2>${local.nombre}</h2>
+        <p><strong>Dirección:</strong> ${local.direccion}</p>
+        <p><strong>Horario:</strong> ${local.apertura} - ${local.cierre}</p>
+        <p><strong>Hora Peak:</strong> ${local.peak}</p>
+        <p><strong>Hora Muerta:</strong> ${local.muerta}</p>
+        <a href="${local.link}" target="_blank">Ver en mapa</a>
+      `;
+
+      contenedor.appendChild(card);
+    });
+  </script>
+</body>
+</html>
